@@ -1,6 +1,7 @@
-import { SettingsTabs } from "./components/SettingsTabs";
-import { Mail, User, UploadCloud } from "lucide-react"
-import * as Input from './components/Input';
+import { SettingsTabs } from "./components/SettingsTabs"
+import * as Input from './components/Input'
+import { Mail } from "lucide-react"
+import * as FileInput from '@/app/components/Form/FileInput'
 
 export default function Home() {
   return (
@@ -84,33 +85,12 @@ export default function Home() {
                 This will be displayed on your profile.
               </span>
             </label>
-            <div className="flex items-start gap-5">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50">
-                <User className="w-8 h-8 text-violet-500" />
-              </div>
-
-              <label 
-                htmlFor="photo"
-                className="flex-1 cursor-pointer flex flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm"
-              >
-                <div className="rounded-full border-spacing-5 border-zinc-50 bg-zinc-100 p-2">
-                  <UploadCloud className="h-5 w-5 text-zinc-600" />
-                </div>
-
-                <div className="flex flex-col items-center gap-1">
-                  <span>
-                    <span>
-
-                    </span>
-                  </span>
-                  <span>
-                    
-                  </span>
-                </div>
-              </label>
-
-              <input type="file" className="sr-only" id="photo"/>
-            </div>
+            <FileInput.Root className="flex items-start gap-5">
+              <FileInput.ImagePreview />
+              <FileInput.Trigger />
+              <FileInput.Control />
+            </FileInput.Root>                           
+           
           </div>
 
           <div className="grid grid-cols-form gap-3 pt-5">
@@ -172,7 +152,11 @@ export default function Home() {
                 Share a few snippets of your work.
               </span>
             </label>
-            <div></div>
+            <FileInput.Root>
+              <FileInput.ImagePreview />
+              <FileInput.Trigger />
+              <FileInput.Control />
+            </FileInput.Root> 
           </div>
 
           <div className="flex items-center justify-end gap-2 pt-5">
