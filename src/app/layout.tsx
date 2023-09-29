@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br" className="antialiased">
+    <html lang="pt-br" className="dark antialiased">
       <body className={inter.className}>
         <div className='min-h-screen lg:grid lg:grid-cols-app dark:bg-zinc-800'>
           <Sidebar/>
